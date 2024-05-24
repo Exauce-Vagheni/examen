@@ -14,6 +14,7 @@ class Soldat(militaire):
         self.__grade=grade
         self.__age=age
         self.__fonction=fonction
+
     def payer(self,montant):
         self.solde=self.solde+montant
     def monter_grade(self,grade):
