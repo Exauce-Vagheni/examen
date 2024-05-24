@@ -46,6 +46,10 @@ class Veteran(Soldat):
     def payer_frais_pension(self):
         self.solde = self.solde + (self.solde / 4)
 
+    """Notion sur la polymorphisme"""
+    def monter_grade(self, grade):
+        print(f"Un retraité ne peut pas monter de grade")
+
     """Notion sur la surchage"""
     def mourir(self):
         super().mourir(etat_de_vie="Mort en etant vétéran")
@@ -64,6 +68,10 @@ class Handicape(Soldat):
     def payer_frais_pension(self):
         self.solde = self.solde + (self.solde / 2)
 
+    """Notion sur la polymorphisme"""
+    def monter_grade(self,grade):
+        print(f"Un handicapé ne peut pas monter de grade")
+        
     """Notion sur la surchage"""
     def mourir(self):
         super().mourir(etat_de_vie="Mort avec handicap")
