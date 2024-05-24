@@ -39,6 +39,10 @@ class Veteran(Soldat):
         self.fonction = fonction
     def payer_frais_pension(self):
         self.solde = self.solde + (self.solde / 4)
+
+    """Notion sur la polymorphisme"""
+    def monter_grade(self, grade):
+        print(f"Un retraité ne peut pas monter de grade")
 class Handicape(Soldat):
     def __init__(self, nom, postnom, matricule, age, solde=0, etat_de_vie="vivant", grade="caporal",
                  fonction="Handicape"):
@@ -52,3 +56,7 @@ class Handicape(Soldat):
         self.fonction = fonction
     def payer_frais_pension(self):
         self.solde = self.solde + (self.solde / 2)
+
+    """Notion sur la polymorphisme"""
+    def monter_grade(self,grade):
+        print(f"Un handicapé ne peut pas monter de grade")
