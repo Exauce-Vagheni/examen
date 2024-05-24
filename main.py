@@ -1,18 +1,24 @@
-class Soldat:
+"""Notion sur l' abstraction"""
+from abc import ABC
+class militaire(ABC):
+    def enguerre(self):
+        print("Ce soldant est en guerre")
+class Soldat(militaire):
     def __init__(self,nom,postnom,matricule,age,solde=0,etat_de_vie="vivant",grade="caporal",fonction="en fonction"):
-        self.nom=nom
-        self.postnom=postnom
-        self.matricule=matricule
-        self.solde=solde
-        self.etat_de_vie=etat_de_vie
-        self.grade=grade
-        self.age=age
-        self.fonction=fonction
+        """Notion sur l'encapsulation"""
+        self.__nom=nom
+        self.__postnom=postnom
+        self.__matricule=matricule
+        self.__solde=solde
+        self.__etat_de_vie=etat_de_vie
+        self.__grade=grade
+        self.__age=age
+        self.__fonction=fonction
     def payer(self,montant):
         self.solde=self.solde+montant
     def monter_grade(self,grade):
         self.grade=grade
-    def mourir(self,etat_de_vie="décedé"):
+    def mourir(self,etat_de_vie="décedé en tant que soldat"):
         self.etat_de_vie=etat_de_vie
         self.fonction="pas en fonction"
     def afficher_soldat(self):
@@ -27,7 +33,7 @@ class Soldat:
 
 """Notion d'heritage"""
 class Veteran(Soldat):
-    def __init__(self, nom, postnom, matricule, age, solde=0, etat_de_vie="vivant", grade="caporal",
+    def __init__(self, nom, postnom, matricule, age, solde=0, etat_de_vie="vivant en retraite", grade="caporal",
                  fonction="Veteran"):
         self.nom = nom
         self.postnom = postnom
@@ -43,8 +49,13 @@ class Veteran(Soldat):
     """Notion sur la polymorphisme"""
     def monter_grade(self, grade):
         print(f"Un retraité ne peut pas monter de grade")
+
+    """Notion sur la surchage"""
+    def mourir(self):
+        super().mourir(etat_de_vie="Mort en etant vétéran")
+
 class Handicape(Soldat):
-    def __init__(self, nom, postnom, matricule, age, solde=0, etat_de_vie="vivant", grade="caporal",
+    def __init__(self, nom, postnom, matricule, age, solde=0, etat_de_vie="vivant avec handicap", grade="caporal",
                  fonction="Handicape"):
         self.nom = nom
         self.postnom = postnom
@@ -60,3 +71,12 @@ class Handicape(Soldat):
     """Notion sur la polymorphisme"""
     def monter_grade(self,grade):
         print(f"Un handicapé ne peut pas monter de grade")
+        
+    """Notion sur la surchage"""
+    def mourir(self):
+        super().mourir(etat_de_vie="Mort avec handicap")
+
+soldat= Veteran("Exauce","Vagheni",4422,20)
+soldat.enguerre()
+soldat.mourir()
+soldat.afficher_soldat()
