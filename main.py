@@ -1,12 +1,12 @@
 class Soldat:
     def __init__(self,nom,postnom,matricule,age,solde=0,etat_de_vie="vivant",grade="caporal"):
-        self.nom=nom
-        self.postnom=postnom
-        self.matricule=matricule
-        self.solde=solde
-        self.etat_de_vie=etat_de_vie
-        self.grade=grade
-        self.age=age
+        self.__nom=nom
+        self.__postnom=postnom
+        self.__matricule=matricule
+        self.__solde=solde
+        self.__etat_de_vie=etat_de_vie
+        self.__grade=grade
+        self.__age=age
     def payer(self,montant):
         self.solde=self.solde+montant
     def monter_grade(self,grade):
