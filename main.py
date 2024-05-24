@@ -5,14 +5,15 @@ class militaire(ABC):
         print("Ce soldant est en guerre")
 class Soldat(militaire):
     def __init__(self,nom,postnom,matricule,age,solde=0,etat_de_vie="vivant",grade="caporal",fonction="en fonction"):
-        self.nom=nom
-        self.postnom=postnom
-        self.matricule=matricule
-        self.solde=solde
-        self.etat_de_vie=etat_de_vie
-        self.grade=grade
-        self.age=age
-        self.fonction=fonction
+        """Notion sur l'abstraction"""
+        self.__nom=nom
+        self.__postnom=postnom
+        self.__matricule=matricule
+        self.__solde=solde
+        self.__etat_de_vie=etat_de_vie
+        self.__grade=grade
+        self.__age=age
+        self.__fonction=fonction
     def payer(self,montant):
         self.solde=self.solde+montant
     def monter_grade(self,grade):
