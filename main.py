@@ -1,4 +1,9 @@
-class Soldat:
+"""Notion sur l' abstraction"""
+from abc import ABC
+class militaire(ABC):
+    def enguerre(self):
+        print("Ce soldant est en guerre")
+class Soldat(militaire):
     def __init__(self,nom,postnom,matricule,age,solde=0,etat_de_vie="vivant",grade="caporal",fonction="en fonction"):
         self.nom=nom
         self.postnom=postnom
@@ -63,5 +68,6 @@ class Handicape(Soldat):
         super().mourir(etat_de_vie="Mort avec handicap")
 
 soldat= Veteran("Exauce","Vagheni",4422,20)
+soldat.enguerre()
 soldat.mourir()
 soldat.afficher_soldat()
