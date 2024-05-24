@@ -5,7 +5,7 @@ class militaire(ABC):
         print("Ce soldant est en guerre")
 class Soldat(militaire):
     def __init__(self,nom,postnom,matricule,age,solde=0,etat_de_vie="vivant",grade="caporal",fonction="en fonction"):
-        """Notion sur l'abstraction"""
+        """Notion sur l'encapsulation"""
         self.__nom=nom
         self.__postnom=postnom
         self.__matricule=matricule
